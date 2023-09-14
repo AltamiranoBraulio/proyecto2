@@ -2,3 +2,4 @@
 
 #Diagrama
 ![](/out/docs/diagrama2(Simplificado)/diagrama2(Simplificado).png)
+![](/images/gtr.jpeg)

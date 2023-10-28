@@ -1,5 +1,8 @@
 @startuml
 
+class Dibujo{
+    + Imprimir
+    }
 Class Conductor {
     + Conducir ()
     + RecogerMonedas ()
@@ -18,14 +21,14 @@ Class Vehiculo{
     + UsarAgarre(Propulsor agarre)
     + UsarPlaneador(Propulsor planeador)
      }
-Class Hill_Climber
+Class HillClimber
 
 Class Etapa{
     + Obstaculizar ()
 }
 Class Campo
 
-Class Pieza_de_Optimizacion{
+Class PiezaDeOpmiizacion{
     + Mejorar Vehiculo ()
 }
 Class Motor{
@@ -64,7 +67,7 @@ Class Propulsor{
 Class Nitro {
     + Activar ()
 }
-Class Doble_Salto{
+Class DobleSalto{
     + Activar ()
 }
 Class NeumaticoPropulsor{
@@ -94,7 +97,7 @@ Class Rpm{
     + Medir ()
 }
 
-Class Control{
+Class Controlador{
     + Mandar ()
 }
 Class Freno{
@@ -104,25 +107,52 @@ Class Acelerador{
     + Acelerar ()
 }
 
-Vehiculo <|-- Hill_Climber
+Vehiculo <|-- HillCliber
 Etapa <|-- Campo
-Pieza_de_Optimizacion <|-- Motor
-Pieza_de_Optimizacion <|-- Suspensión
-Pieza_de_Optimizacion <|-- NeumaticoMejora
-Pieza_de_Optimizacion <|--T4r
+PiezaDeOptimizacion <|-- Motor
+PiezaDeOptimizacion <|-- Suspensión
+PiezaDeOptimizacion <|-- NeumaticoMejora
+PiezaDeOptimizacion <|--T4r
 Iteam <|-- Moneda 
 Iteam <|-- Gema
 Iteam <|-- Gasolina
 Propulsor <|-- Nitro
-Propulsor <|-- Doble_Salto
+Propulsor <|-- DobleSalto
 Propulsor <|-- NeumaticoPropulsor
 Propulsor <|-- Agarre
 Propulsor <|-- Planeador
 Medidor <|-- Metro
 Medidor <|-- Boost
 Medidor <|-- Rpm
-Control <|-- Freno
-Control <|-- Acelerador
+Controlador <|-- Freno
+Controlador <|-- Acelerador
+Dibujo <|--Conductor
+Dibujo <|--Vehiculo
+Dibujo <|--HillClimber
+Dibujo <|--Etapa
+Dibujo <|--Campo
+Dibujo <|--PiezaDeOpmiizacion
+Dibujo <|--Motor
+Dibujo <|--Suspensión
+Dibujo <|--NeumaticoMejora
+Dibujo <|--T4r
+Dibujo <|--Iteam
+Dibujo <|--Moneda
+Dibujo <|--Gema
+Dibujo <|--Gasolina
+Dibujo <|--Propulsor
+Dibujo <|--Nitro
+Dibujo <|--DobleSalto
+Dibujo <|--NeumaticoPropulsor
+Dibujo <|--Agarre
+Dibujo <|--Planeador
+Dibujo <|--Medidor
+Dibujo <|--Metro
+Dibujo <|--Boost
+Dibujo <|--Rpm
+Dibujo <|--Controlador
+Dibujo <|--Freno
+Dibujo <|--Acelerador
 
 
 Moneda"*"--* "1"Etapa
@@ -142,36 +172,36 @@ Rpm "1"--* "1"Campo
 Freno "1"--* "1"Campo
 Acelerador"1"--* "1" Campo
 Motor "*"--* "1"Vehiculo
-Motor "*"--* "1"Hill_Climber
+Motor "*"--* "1"HillClimber
 Suspensión "*"--* "1" Vehiculo
-Suspensión "*"--* "1"Hill_Climber
+Suspensión "*"--* "1"HillClimber
 NeumaticoMejora "*"--* "1"Vehiculo
-NeumaticoMejora"*"--* "1" Hill_Climber
+NeumaticoMejora"*"--* "1" HillClimber
 T4r "*"--* "1"Vehiculo
-T4r "*"--* "1"Hill_Climber
+T4r "*"--* "1"HillClimber
 Freno"1"--* "*" Vehiculo
-Freno"1"--* "1"Hill_Climber
+Freno"1"--* "1"HillClimber
 Acelerador"1"--* "*" Vehiculo
-Acelerador"1"--* "1" Hill_Climber
+Acelerador"1"--* "1" HillClimber
 
 Conductor "1" o-- "*" Vehiculo
-Conductor "1" o-- "1" Hill_Climber
+Conductor "1" o-- "1" HillClimber
 Conductor "1" o-- "*" Etapa
 Conductor "1" o-- "1" Campo
 Conductor "1" o-- "1" Moneda
 Conductor "1" o-- "1"  Gema
 Conductor "1" o-- "1"  Gasolina
 Nitro "1" --o "*" Vehiculo
-Nitro"1" --o "1"Hill_Climber
-Doble_Salto"1" --o "*" Vehiculo
-Doble_Salto"1" --o "1"Hill_Climber
+Nitro"1" --o "1"HillClimber
+DobleSalto"1" --o "*" Vehiculo
+DobleSalto"1" --o "1"HillClimber
 NeumaticoPropulsor"1" --o "*" Vehiculo
-NeumaticoPropulsor"1" --o "1" Hill_Climber
+NeumaticoPropulsor"1" --o "1" HillClimber
 Agarre "1"--o "1"Vehiculo
-Agarre "1" --o "1"Hill_Climber
+Agarre "1" --o "1"HillClimber
 Planeador "1" --o "1"Vehiculo
-Planeador "1" --o "1"Hill_Climber
-Conductor "1" o-- "1" Control
+Planeador "1" --o "1"HillClimber
+Conductor "1" o-- "1" Controlador
 Conductor "1" o-- "1" Freno
 Conductor "1" o-- "1" Acelerador
 

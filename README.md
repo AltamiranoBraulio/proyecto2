@@ -1,4 +1,8 @@
 # Hill Climb Racing
 ![](./images/Hillclimbracing.png)
 ## Diagrama de clases
-![](/out/docs/diagrama2(Simplificado)/diagrama2(Simplificado).png)
+![](./images/DiagramasDeClases.png)
+## Como Jugar?
+## "D" para avanzar el vehiculo
+## "A" para retroceder el vehiculo
+## "Q" para salir del juego

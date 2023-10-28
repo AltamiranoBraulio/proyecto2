@@ -5,7 +5,7 @@
 class Juego
 {
 private:
-    Dinosaurio dinosauri; // tiene
+    Vehiculo vehiculo; // tiene
     Escenario escenario;
 
 public:
